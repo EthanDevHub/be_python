@@ -10,12 +10,12 @@
 True
 False
 
-# List - sequential, moveable
+# List - Sequential, Mutable, Slower
 [128, 256, 512]
 name_a = ["Alice", "Bob", "Carl"]
 print(name_a[0])
 
-# Tuple - sequential, non-moveable
+# Tuple - Sequential, Immutable, Faster
 (8, 16, 32, 48)
 nato_a = ["Alpha", "Bravo", "Charlie"]
 print(nato_a[1])
