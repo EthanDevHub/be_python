@@ -11,6 +11,7 @@ while n <= margin:
 print(f"The SUM from 0 to {margin} = {sum}")
 print("\n")
 
+
 # for loop
 print("A for loop sum test...")
 margin = int(input("Please enter the margin: "))
