@@ -1,4 +1,12 @@
-
+# Data Structure Comparison Table
+# -------------------------------------------------------------------------------------------------------------------------------
+# | Data Structure | Sequential |   Allows Duplicates?   | Mutable | Lookup (in)          | Main Usage                          |
+# |----------------|------------|------------------------|---------|----------------------|-------------------------------------|
+# | list           | Yes        | Yes                    | Yes     | O(n)                 | Storing ordered data, modifiable    |
+# | tuple          | Yes        | Yes                    | No      | O(n)                 | Immutable collection, used as keys  |
+# | set            | No         | No                     | Yes     | O(1) avg, O(n) worst | Unique elements, set operations     |
+# | dict           | Yes        | Keys: No, Values: Yes  | Yes     | O(1) avg, O(n) worst | Fast lookups, key-value mapping     |
+# -------------------------------------------------------------------------------------------------------------------------------
 
 #number
 1024
@@ -32,3 +40,4 @@ fruit_a = {"Apple", "Banana", "Cherry"}
 x=1024
 print("The x = " + str(x))
 print(f"The x = {x}")
+

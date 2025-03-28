@@ -1,4 +1,4 @@
-print("*************** Set practices (Mutable but slower) ***************\n")
+print("*************** Set practices (Mutable) ***************\n")
 #Set
 S1 = {1, 2, 3}
 print(f"S1 = {S1}")
@@ -42,3 +42,35 @@ print(f"The word = {S}")
 print(f"h is in the string \"Hello World!!!\": {is_found}")
 print("\n")
 
+print("*************** Set practices (Mutable) ***************\n")
+
+
+print("*************** Dictionary practices (Keys: Immutable, Values: Mutable) ***************\n")
+#Dictionary
+
+dic = {"Apple" : "Red", "Banana" : "Yellow"}
+print(f"dic = {dic}")
+print(f"Keys in dic = {list(dic.keys())}")
+print(f"Vlaues in dic = {list(dic.values())}")
+print(f"Color of Apple is {dic['Apple']}")
+print("\n")
+
+print("I can check whether a key exist in dic...")
+print(f"Banana is in dic: {'Banana' in dic}")
+print(f"Peach is in dic: {'Peach' in dic}")
+print("\n")
+
+print("I can delete key(s) from dic...")
+del(dic["Apple"])
+print(f"After deletion, dic = {dic}")
+print("\n")
+
+print("I can convert a list to a dic...")
+list_1 = [1, 3, 5]
+dic_1 = {x:x**2 for x in list_1}
+print(f"list_1 = {list_1}")
+print(f"dic_1 = {dic_1}")
+
+
+
+print("*************** Dictionary practices (Keys: Immutable, Values: Mutable) ***************\n")
