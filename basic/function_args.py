@@ -12,11 +12,9 @@ def find_odd_elements_in_tuple_type(*arg):
     odd_entry=[]
     sum=0
     for x in arg:
-        # sum+=x
         if(x%2 == 0):
             odd_entry.append(x)
 
-    # print(f"sum={sum}")
     return tuple(odd_entry)
 
 def average_score(*arg):
