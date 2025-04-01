@@ -10,7 +10,7 @@ file.close()
 print("\n")
 print("[Exercise 2]")
 print("========================================================================")
-print("Create a Wi-Fi configuration file - wifi_settings.conf (method_1)")
+print("Create a Wi-Fi configuration file - wifi_settings.conf (method_2)")
 # method 2
 #write
 with open("/home/ethan/be_python/proj_file_control/wifi_settings.conf", mode="a", encoding="utf-8") as file:
@@ -18,7 +18,8 @@ with open("/home/ethan/be_python/proj_file_control/wifi_settings.conf", mode="a"
 
 # read
 with open("/home/ethan/be_python/proj_file_control/wifi_settings.conf", mode="r", encoding="utf-8") as file:
-    print(f"{file.read()}")
+    data = file.read()
+    print(f"Content of wifi_settings.conf is:\n{data}")
 
 
 print("\n")
@@ -26,14 +27,28 @@ print("[Exercise 3]")
 print("========================================================================")
 print("Read a file and calculate the sum in the file")
 with open("/home/ethan/be_python/proj_file_control/scores.txt", mode="w", encoding="utf-8") as file:
-    file.write("90\n89\n95\n79")
+    file.write("90\n89\n九十二\n95\n79\n")
 
-sum = 0
+total = 0
 with open("/home/ethan/be_python/proj_file_control/scores.txt", mode="r", encoding="utf-8") as file:
-    for score in file:
-        sum += int(score)
+    # Get all content. (The typeof data is string)
+    data = file.read()          # the fp will be moved to the tail.
+    print(f"data = \n{data}")
 
-print(f"The total score in scores.txt = {sum}")
+    # Covert all content as list type, each element in list is a line in file.
+    file.seek(0)                # move fp back to the head
+    line = file.readlines()     # read all content and retuen a list (fp will be moved to the tail)
+    print(f"line = {line}")
+
+    # Use a for loop to read each line from the file and assign it to the variable 'score'
+    file.seek(0)                # move fp back to the head
+    for score in file:
+        try:
+            total += int(score.strip())  # strip() helps remove '\n' or spaces...
+        except ValueError:
+            print(f"Skip invalid score: {score.strip()}")
+
+print(f"The total score in scores.txt = {total}")
 
 
 print("\n")
@@ -53,5 +68,5 @@ print(f"release_date = {data['release_date']}")
 
 # modify
 data["version"] = "1.0.3"
-with open("/home/ethan/be_python/proj_geometry/config.json", mode="w", encoding="utf-8") as file:
+with open("/home/ethan/be_python/proj_file_control/config.json", mode="w", encoding="utf-8") as file:
     json.dump(data, file)
