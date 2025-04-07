@@ -67,6 +67,12 @@ print(f"version = {data['version']}")
 print(f"release_date = {data['release_date']}")
 
 # modify
-data["version"] = "1.0.3"
+data["version"] = "1.0.3"   # modify one value of a key
 with open("./config.json", mode="w", encoding="utf-8") as file:
     json.dump(data, file)
+
+print("Update version from 1.0.2 to 1.0.3...")
+with open("./config.json", mode="r", encoding="utf-8") as file:
+    data = json.load(file)
+
+print(f"data = {data}")
